@@ -1,0 +1,17 @@
+build:
+    test:
+        image: node
+        commands:
+            - echo "test" >> docs/DOC.md
+cache:
+    mount:
+        - node_modules
+publish:
+    gh_pages:
+        source: docs
+        when:
+            branch: master
+    gh_pages:
+        source: docs
+        when:
+            branch: develop
